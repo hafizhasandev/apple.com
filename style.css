@@ -1,0 +1,917 @@
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 50px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1d1d1f;
+    background: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* NAVBAR */
+.navbar {
+    height: 44px;
+    background: rgba(255, 255, 255, 0.96);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(15px);
+}
+
+.navbar nav {
+    max-width: 1000px;
+    height: 100%;
+    margin: auto;
+    padding: 0 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.navbar a {
+    color: #333336;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.navbar a:hover {
+    color: #0071e3;
+}
+
+.navbar .logo {
+    font-size: 20px;
+}
+
+/* COMMON HERO */
+.hero {
+    width: 100%;
+    min-height: 650px;
+    padding-top: 48px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 3;
+    padding: 0 15px;
+}
+
+.hero h1,
+.hero h2 {
+    font-size: clamp(40px, 5vw, 58px);
+    letter-spacing: -2px;
+    line-height: 1.1;
+}
+
+.hero-text > p {
+    font-size: 27px;
+    margin-top: 10px;
+}
+
+.white {
+    color: #f5f5f7;
+}
+
+.dark {
+    color: #1d1d1f;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 18px;
+}
+
+.btn {
+    padding: 12px 22px;
+    border-radius: 28px;
+    display: inline-block;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.blue-btn {
+    background: #0071e3;
+    color: white;
+    border: 1px solid #0071e3;
+}
+
+.blue-btn:hover {
+    background: #0077ed;
+}
+
+.outline-btn {
+    color: #0071e3;
+    border: 1px solid #0071e3;
+}
+
+.white .outline-btn {
+    color: #2997ff;
+    border-color: #2997ff;
+}
+
+.outline-btn:hover {
+    background: rgba(0, 113, 227, 0.1);
+}
+
+/* IPHONE HERO */
+.iphone {
+    min-height: 570px;
+    background: #000;
+    padding-top: 48px;
+}
+
+.phone-art {
+    width: min(95%, 1000px);
+    height: 330px;
+    margin: 45px auto 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.phone-back {
+    width: 230px;
+    height: 300px;
+    position: absolute;
+    top: 5px;
+    border: 5px solid #a8a8ad;
+    border-radius: 32px;
+    background: linear-gradient(135deg, #dadadd, #56565e);
+    box-shadow: 0 0 35px rgba(255,255,255,0.15);
+}
+
+.phone-one {
+    left: 19%;
+    transform: rotate(-9deg);
+}
+
+.phone-two {
+    right: 19%;
+    transform: rotate(9deg);
+}
+
+.camera {
+    width: 90px;
+    height: 90px;
+    margin: 15px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7px;
+    border-radius: 25px;
+    background: #303035;
+}
+
+.camera i {
+    border-radius: 50%;
+    border: 4px solid #777780;
+    background: radial-gradient(circle, #0c1828, #050505);
+}
+
+.phone-front {
+    position: absolute;
+    width: 270px;
+    height: 300px;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%) rotate(-5deg);
+    border: 6px solid #7c7c83;
+    border-radius: 34px;
+    background: #19191e;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(255,255,255,0.2);
+}
+
+.screen-glow {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 30% 20%, #e7b3cd, transparent 35%),
+        radial-gradient(ellipse at 75% 70%, #5376b7, transparent 45%),
+        linear-gradient(145deg, #101020, #6d416b);
+}
+
+.dynamic-island {
+    width: 85px;
+    height: 22px;
+    border-radius: 20px;
+    background: #000;
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* GENERAL SECTIONS */
+.section {
+    padding: 85px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin: 0 auto 40px;
+}
+
+.section-title h2 {
+    font-size: clamp(32px, 4vw, 48px);
+    letter-spacing: -1.5px;
+}
+
+.section-title p {
+    font-size: 18px;
+    color: #6e6e73;
+    margin-top: 15px;
+}
+
+.card-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.info-card {
+    padding: 35px 28px;
+    min-height: 230px;
+    border-radius: 24px;
+}
+
+.info-card i {
+    font-size: 30px;
+    margin-bottom: 35px;
+}
+
+.info-card h3 {
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.info-card p {
+    line-height: 1.6;
+}
+
+.dark-card {
+    background: #171719;
+    color: white;
+}
+
+.gray-card {
+    background: #f5f5f7;
+    color: #1d1d1f;
+}
+
+.blue-card {
+    background: #dceafa;
+    color: #1d1d1f;
+}
+
+/* MACBOOK */
+.mac {
+    background: #f5f5f7;
+    min-height: 730px;
+    padding-top: 65px;
+}
+
+.laptop {
+    width: min(75%, 750px);
+    margin: 65px auto 0;
+    position: relative;
+}
+
+.laptop-screen {
+    height: 310px;
+    border: 9px solid #44444a;
+    border-bottom-width: 15px;
+    border-radius: 18px 18px 6px 6px;
+    position: relative;
+    overflow: hidden;
+    background: #17172a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.laptop-wallpaper {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 25% 25%, #e47be9, transparent 35%),
+        radial-gradient(ellipse at 70% 65%, #626bff, transparent 45%),
+        linear-gradient(135deg, #121329, #343e77);
+}
+
+.laptop-screen span {
+    color: white;
+    font-size: 21px;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 2px;
+}
+
+.laptop-base {
+    height: 17px;
+    width: 112%;
+    margin-left: -6%;
+    background: linear-gradient(#ddd, #85858b);
+    clip-path: polygon(4% 0, 96% 0, 100% 70%, 90% 100%, 10% 100%, 0 70%);
+    border-radius: 0 0 12px 12px;
+}
+
+/* SPLIT SECTIONS */
+.split-section {
+    min-height: 470px;
+    padding: 75px 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 45px;
+    background: white;
+}
+
+.split-section h2 {
+    font-size: clamp(34px, 4vw, 50px);
+    letter-spacing: -1px;
+    line-height: 1.1;
+}
+
+.split-section p {
+    color: #6e6e73;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-top: 20px;
+}
+
+.text-link {
+    color: #0066cc;
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
+.art-box {
+    height: 300px;
+    border-radius: 28px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.creative-art {
+    background: #11111b;
+}
+
+.orb {
+    width: 170px;
+    height: 170px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.orb-one {
+    background: linear-gradient(135deg, #ff8ecb, #8659e8);
+    transform: translate(-45px, -25px);
+}
+
+.orb-two {
+    background: linear-gradient(135deg, #69d5ff, #4858dd);
+    transform: translate(45px, 25px);
+    mix-blend-mode: screen;
+}
+
+.orb-three {
+    width: 90px;
+    height: 90px;
+    background: #ffd29a;
+    filter: blur(25px);
+}
+
+.creative-art span {
+    color: white;
+    z-index: 1;
+    letter-spacing: 4px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* WATCH */
+.watch {
+    background: #f5f5f7;
+    min-height: 680px;
+    padding-top: 55px;
+}
+
+.watch-art {
+    width: 280px;
+    height: 325px;
+    margin: 35px auto 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.watch-strap {
+    width: 120px;
+    height: 125px;
+    position: absolute;
+    left: 80px;
+    background: repeating-linear-gradient(
+        90deg, #29292d 0 6px, #44444a 6px 11px
+    );
+    border-radius: 24px;
+}
+
+.top-strap {
+    top: 0;
+}
+
+.bottom-strap {
+    bottom: 0;
+}
+
+.watch-face {
+    width: 165px;
+    height: 190px;
+    border: 8px solid #333338;
+    border-radius: 42px;
+    position: absolute;
+    top: 65px;
+    z-index: 2;
+    background: #08080a;
+    text-align: center;
+    box-shadow: 0 10px 25px #0002;
+}
+
+.watch-time {
+    display: block;
+    color: white;
+    font-size: 34px;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+.watch-rings {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.watch-rings i {
+    width: 30px;
+    height: 30px;
+    margin: 0 -3px;
+    border: 5px solid #ff625a;
+    border-radius: 50%;
+}
+
+.watch-rings i:nth-child(2) {
+    border-color: #9ee35b;
+}
+
+.watch-rings i:nth-child(3) {
+    border-color: #51c5ff;
+}
+
+/* AIRPODS */
+.airpods {
+    background: #09090b;
+    min-height: 680px;
+    padding-top: 60px;
+}
+
+.airpods-art {
+    width: 350px;
+    height: 330px;
+    position: relative;
+    margin: 40px auto 0;
+}
+
+.earbud {
+    width: 75px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    border-radius: 45px 45px 25px 25px;
+    background: linear-gradient(120deg, white, #c5c5cb);
+}
+
+.left-earbud {
+    left: 85px;
+    transform: rotate(-15deg);
+}
+
+.right-earbud {
+    right: 85px;
+    transform: rotate(15deg);
+}
+
+.earbud span {
+    width: 25px;
+    height: 85px;
+    background: linear-gradient(90deg, #c5c5cb, white, #b9b9bf);
+    border-radius: 15px;
+    position: absolute;
+    top: 65px;
+    left: 25px;
+}
+
+.airpods-case {
+    width: 190px;
+    height: 125px;
+    border-radius: 30px 30px 45px 45px;
+    background: linear-gradient(140deg, #fff, #c8c8cd);
+    position: absolute;
+    bottom: 10px;
+    left: 80px;
+    box-shadow: 0 15px 35px #ffffff15;
+}
+
+.case-line {
+    height: 2px;
+    width: 100%;
+    background: #b8b8bd;
+    position: absolute;
+    top: 42px;
+}
+
+.case-light {
+    width: 8px;
+    height: 5px;
+    background: #777;
+    border-radius: 50%;
+    position: absolute;
+    top: 67px;
+    left: 91px;
+}
+
+/* IPAD */
+.ipad {
+    background: #f5f5f7;
+    min-height: 700px;
+    padding-top: 60px;
+}
+
+.ipad-device {
+    width: min(75%, 650px);
+    height: 330px;
+    margin: 55px auto 0;
+    padding: 12px;
+    border-radius: 27px;
+    background: linear-gradient(135deg, #bdbdc3, #333338);
+    box-shadow: 0 20px 40px #0003;
+    position: relative;
+}
+
+.ipad-screen {
+    width: 100%;
+    height: 100%;
+    border-radius: 17px;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(135deg, #dfcaff, #a7b8ff);
+}
+
+.ipad-orb {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.ipad .orb-one {
+    background: linear-gradient(135deg, #f4c9ff, #8755e8);
+    left: 10%;
+    top: -35px;
+}
+
+.ipad .orb-two {
+    background: linear-gradient(135deg, #b7e5ff, #4269dd);
+    right: -10px;
+    bottom: -45px;
+}
+
+.ipad .orb-three {
+    width: 160px;
+    height: 160px;
+    background: linear-gradient(135deg, #ffe4c9, #ed8bc2);
+    top: 35px;
+    right: 25%;
+    filter: none;
+}
+
+.ipad-copy-art {
+    background: linear-gradient(135deg, #c7b6ff, #6b77e8);
+    flex-direction: column;
+    gap: 25px;
+}
+
+.ipad-copy-art i {
+    font-size: 75px;
+    color: white;
+}
+
+.ipad-copy-art span {
+    color: white;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+/* VISION */
+.vision {
+    background: #101014;
+    min-height: 630px;
+}
+
+.vision-art {
+    width: 340px;
+    height: 220px;
+    margin: 55px auto 0;
+    position: relative;
+}
+
+.vision-goggles {
+    width: 300px;
+    height: 115px;
+    border-radius: 35px;
+    background: linear-gradient(145deg, #f6f6fa, #85858d 50%, #dedee5);
+    position: absolute;
+    left: 20px;
+    top: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 5px solid #aaaab2;
+    box-shadow: 0 0 35px #ffffff22;
+    z-index: 2;
+}
+
+.vision-goggles div {
+    width: 120px;
+    height: 68px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #202a40, #101015);
+    border: 3px solid #707079;
+}
+
+.vision-band {
+    width: 340px;
+    height: 85px;
+    border: 13px solid #55555d;
+    border-radius: 50%;
+    position: absolute;
+    top: 55px;
+}
+
+/* PROMOTION CARDS */
+.promotions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    padding: 14px;
+    background: #fff;
+}
+
+.promo-card {
+    min-height: 380px;
+    padding: 45px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.promo-card h2 {
+    font-size: clamp(27px, 3vw, 38px);
+    letter-spacing: -1px;
+}
+
+.promo-card p {
+    margin-top: 12px;
+    font-size: 17px;
+}
+
+.promo-icon {
+    display: block;
+    font-size: 42px;
+    margin: 40px auto 25px;
+}
+
+.promo-purple {
+    background: linear-gradient(145deg, #f3e9ff, #d8c8fa);
+}
+
+.promo-silver {
+    background: #f5f5f7;
+}
+
+.promo-home {
+    background: linear-gradient(145deg, #d9f0f1, #a7cedc);
+}
+
+.promo-music {
+    background: linear-gradient(145deg, #151525, #454579);
+    color: white;
+}
+
+.promo-card .text-link {
+    position: relative;
+    z-index: 2;
+}
+
+/* FOOTER */
+.footer {
+    background: #f5f5f7;
+    padding: 25px max(6%, calc((100% - 1000px) / 2));
+    color: #6e6e73;
+    font-size: 12px;
+}
+
+.footer-note {
+    line-height: 1.8;
+    padding: 10px 0 20px;
+}
+
+.footer hr {
+    border: none;
+    height: 1px;
+    background: #d2d2d7;
+    margin: 20px 0;
+}
+
+.footer-columns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    padding: 10px 0;
+}
+
+.footer-columns h4 {
+    color: #1d1d1f;
+    font-size: 12px;
+    margin-bottom: 14px;
+}
+
+.footer-columns a {
+    display: block;
+    color: #515154;
+    margin-bottom: 12px;
+}
+
+.footer-columns a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 5px 0 15px;
+}
+
+.footer-bottom a {
+    color: #515154;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1050px) {
+    .navbar nav {
+        padding: 0 18px;
+        gap: 12px;
+    }
+
+    .navbar nav a:nth-child(n+2):nth-child(-n+12) {
+        display: none;
+    }
+}
+
+@media (max-width: 700px) {
+    .hero {
+        min-height: 570px;
+        padding-top: 45px;
+    }
+
+    .iphone {
+        min-height: 500px;
+    }
+
+    .phone-art {
+        transform: scale(0.78);
+        transform-origin: top center;
+        margin-top: 35px;
+    }
+
+    .phone-one {
+        left: 5%;
+    }
+
+    .phone-two {
+        right: 5%;
+    }
+
+    .card-grid,
+    .watch-features {
+        grid-template-columns: 1fr;
+    }
+
+    .info-card {
+        min-height: 190px;
+    }
+
+    .laptop {
+        width: 90%;
+        margin-top: 60px;
+    }
+
+    .laptop-screen {
+        height: 220px;
+    }
+
+    .split-section {
+        grid-template-columns: 1fr;
+        padding: 60px 7%;
+    }
+
+    .art-box {
+        min-height: 260px;
+    }
+
+    .ipad-device {
+        width: 90%;
+        height: 240px;
+    }
+
+    .promotions {
+        grid-template-columns: 1fr;
+    }
+
+    .promo-card {
+        min-height: 330px;
+    }
+
+    .footer-columns {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero h1,
+    .hero h2 {
+        font-size: 37px;
+    }
+
+    .hero-text > p {
+        font-size: 21px;
+    }
+
+    .buttons {
+        gap: 9px;
+    }
+
+    .btn {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .phone-art {
+        transform: scale(0.65);
+    }
+
+    .airpods-art {
+        transform: scale(0.85);
+        transform-origin: top center;
+    }
+}
+
